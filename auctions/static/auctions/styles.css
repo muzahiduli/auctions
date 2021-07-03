@@ -1,0 +1,27 @@
+body {
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+}
+
+#index{
+    margin-top: 30px; 
+    border-left: solid; 
+    border-right: solid; 
+    border-width: 1px; 
+    border-color: rgb(209, 209, 209);
+}
+
+#imgborder {
+    border-style: solid; 
+    border-width: 1px; 
+    border-color: rgb(209, 209, 209);
+}
+
+#listingInfo {
+    padding: 20px; 
+    margin-left: 60px; 
+    border-right: dashed; 
+    border-top: dashed; 
+    border-width: 1px; 
+    border-color: rgb(209, 209, 209);
+}

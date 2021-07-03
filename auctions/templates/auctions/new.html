@@ -1,0 +1,27 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <div class="container">
+        {% if message %}
+        <h2>{{ message }}</h2>
+        {% else %}
+        <h2>New Listing</h2>
+        <hr>
+
+        <form action="{% url 'newlisting' %}" method="POST">
+            {% csrf_token %}
+            <label>Name of Item:</label><br>
+            <input type="text" name="title"><br>
+            <label>Price/Initial Bid:</label><br>
+            $<input type="number" step=".01" name="price" style="width: 100px;"><br>
+            <label>Description:</label><br>
+            <textarea name="description" style="width: 500px; height:200px;"></textarea><br>
+            <label>Category:</label><br>
+            <input type="text" name="category"><br>
+            <label>Image URL (Optional):</label><br>
+            <input type="url" name="imageurl" style="width: 600px;"><br><br>
+            <input type="submit">
+        </form>
+        {% endif %}
+    </div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+
+    <div class="container">
+        {% if clickWatchlist %}
+        <h2>Watchlist</h2>
+        {% elif clickCategory %}
+        <h2>{{ category }}</h2>
+        {% else %}
+        <h2>Active Listings</h2>
+        {% endif %}
+
+        {% for listing in listings %}
+            <hr>
+            <div class="row" id="index">
+                <div class="col">
+                    <img src="{{ listing.imageurl }}" width="200" height="200">
+                </div>
+                <div class="col">
+                    <a href="{% url 'listing' listing.id %}">{{ listing.name }}</a><br>
+                    ${{ listing.price }}<br>
+                    {{ listing.extra_detail }}<br>
+                </div>
+            </div>
+            <hr>
+        {% endfor %}
+    </div>
+{% endblock %}
